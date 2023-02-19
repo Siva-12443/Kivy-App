@@ -1,0 +1,654 @@
+
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+MDScreen:
+    name: "Admin"
+    MDFloatLayout:
+        md_bg_color : 1, 1, 1, 1
+
+        ScreenManager:
+            id:scr
+            transition : NoTransition()
+            
+            # home screen
+            MDScreen:
+                name: "Home4"
+                MDFloatLayout:
+                    md_bg_color: 1, 1, 1, 1
+                    MDIconButton:
+                        icon: "logout"
+                        pos_hint: {"center_x": .93, "center_y": .95}
+                        user_font_size: "20sp"
+                        theme_text_color: "Custom"
+                        text_color: rgba(34, 34, 34, 255)
+                        on_release: 
+                            root.manager.current = "login"
+                    Image:
+                        source: "assets/logo.png"
+                        size_hint: .8, .8
+                        pos_hint: {"center_x": .5, "center_y": .65}
+                    MDLabel: 
+                        text: "Welcome To "
+                        font_name: "SPoppins"
+                        font_size: "23sp"
+                        pos_hint: {"center_y": .42}
+                        halign: "center"
+                        color: rgba(34, 34, 34, 255)
+                    MDLabel: 
+                        text: "Annapoorna Scheme !!"
+                        font_name: "SPoppins"
+                        font_size: "23sp"
+                        pos_hint: {"center_y": .36}
+                        halign: "center"
+                        color: rgba(34, 34, 34, 255)
+                    MDLabel: 
+                        text: "Food is not Rational. Food is Culture, Habit, Craving and Identity. Good Food is the foundation of genuine happiness."
+                        font_name: "MPoppins"
+                        font_size: "13sp"
+                        size_hint_x: .85
+                        pos_hint: {"center_x": .5, "center_y": .26}
+                        halign: "center"
+                        color: rgba(127, 127, 127, 255)
+            
+            #Admin Profile Details
+            MDScreen:
+                name: "Home3"
+                MDFloatLayout:
+                    md_bg_color: 1, 1, 1, 1
+                    MDIconButton:
+                        icon: "arrow-left"
+                        pos_hint: {"center_y": .95}
+                        user_font_size: "30sp"
+                        theme_text_color: "Custom"
+                        text_color: rgba(26, 24, 58, 255)
+                        on_release:
+                            scr.current = "Home"
+                    MDLabel:
+                        text: "Admin Profile Details !"
+                        font_name: "SPoppins"
+                        font_size: "22sp"
+                        pos_hint: {"center_x": .6, "center_y": .88}
+                        color: rgba(34, 34, 34, 255)
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .77}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: username
+                            hint_text: "User Name"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp" 
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .66}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: Canteen_Name
+                            hint_text: "Canteen Name"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp"
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .55}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: email
+                            hint_text: "Email"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp"
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .44}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: password
+                            hint_text: "Password"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            password: True
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp"
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .33}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: confirmpassword
+                            hint_text: "Change Password"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            password: True
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp"
+                    Button: 
+                        text: "Update"
+                        font_name: "Poppins"
+                        size_hint: .66, .065
+                        font_size: "18sp"
+                        pos_hint: {"center_x": .5, "center_y": .21}
+                        background_color: 0, 0, 0, 0
+                        on_release: app.send_data(username, rollno, email, password)
+                        canvas.before: 
+                            Color:
+                                rgb: app.btn_color
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+
+            # student manage home screen
+            MDScreen:
+                name:"Home"
+                id:home
+                
+                MDFloatLayout:
+                    md_bg_color: 1, 1, 1, 1
+                    MDIconButton:
+                        icon: "arrow-left"
+                        pos_hint: {"center_y": .95}
+                        user_font_size: "30sp"
+                        theme_text_color: "Custom"
+                        text_color: rgba(26, 24, 58, 255)
+                        on_release:
+                            scr.current = "Home3" 
+                    MDLabel:
+                        text: "Welcome To User Details !"
+                        font_name: "SPoppins"
+                        font_size: "20sp"
+                        pos_hint: {"center_x": .6, "center_y": .88}
+                        color: rgba(34, 34, 34, 255)
+
+                MDRectangleFlatIconButton:
+                    icon: "account-plus-outline"
+                    text: "Student Data Entry"
+                    text_size:self.size
+                    elevation:10
+                    line_color: "white"
+                    size_hint :1, .08
+                    halign:'left'
+                    pos_hint: {'center_x': .5, 'center_y': .64}
+                    text_color: "black"
+                    icon_color:"black"
+                    on_release: scr.current = "Add" 
+
+                MDRectangleFlatIconButton:
+                    icon: "account-edit-outline"
+                    text: "Update Student Data"
+                    text_size:self.size
+                    halign:'left'
+                    line_color: "white"
+                    size_hint :1, .08
+                    pos_hint: {'center_x': .5, 'center_y': .72}
+                    text_color: "black"
+                    icon_color:"black"
+                    on_release: scr.current = "Update"
+
+                MDRectangleFlatIconButton:
+                    icon: "microsoft-excel"
+                    text: "Add Student data Using Excel"
+                    text_size:self.size
+                    halign:'left'
+                    line_color: "white"
+                    size_hint :1, .08
+                    pos_hint: {'center_x': .5, 'center_y': .8}
+                    text_color: "black"
+                    icon_color:"black"
+                    on_release: scr.current = "Excel"
+
+                MDRectangleFlatIconButton:
+                    icon: "account-remove-outline"
+                    text: "Delete Student Data"
+                    text_size:self.size
+                    halign:'left'
+                    line_color: "white"
+                    size_hint :1, .08
+                    pos_hint: {'center_x': .5, 'center_y': .55}
+                    text_color: "black"
+                    icon_color:"black"
+                    on_release: scr.current = "delete"
+
+            #student delete screen 
+            MDScreen:
+                name:"delete"
+                MDScreen:
+                    MDScrollView:
+                        MDList:
+                            id: md_list
+                            size_hint:0.99,0.97    
+
+            MDScreen:
+                name:"Excel" 
+
+                MDLabel:
+                    text:"Follow these Condition to Upload Data in Database "
+                    pos_hint : {'center_x': .5,'center_y':.87}
+
+                MDLabel:
+                    text:"* The Column Name and Order Should Same as Shown Below "
+                    pos_hint : {'center_x': .5,'center_y':.75}
+
+                MDLabel:
+                    text:"* ID studName studRoll stdDept"
+                    pos_hint : {'center_x': .5,'center_y':.65}
+
+                MDLabel:
+                    text:"*"
+                    pos_hint : {'center_x': .5,'center_y':.4}
+
+                MDRaisedButton:
+                    text: "Upload File"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .5, 'center_y': .15}
+                    on_release:app.excelupload()
+            
+
+            #canteen delete Screen
+            MDScreen:  
+                name:"Canteen Delete"
+                MDScreen:  
+                    MDScrollView:
+                        MDList:
+                            id: datatable
+                            pos_hint:{'center_y':0.50}
+                            size_hint:0.99,0.95
+                
+
+            #manage canteen home screen
+            MDScreen:
+                name:"Home1"
+                MDTopAppBar:
+                    id:button1
+                    title: "Manage Canteen User"
+                    left_action_items: [["arrow-left", lambda x: app.callback(), "Back To Home Page"]]
+                    pos_hint : {"center_y":.96}
+                    
+                MDRectangleFlatIconButton:
+                    icon: "account-plus-outline"
+                    text: "Add Canteen User"
+                    text_size:self.size
+                    elevation:10
+                    line_color: "white"
+                    size_hint :1, .08
+                    halign:'left'
+                    pos_hint: {'center_x': .5, 'center_y': .8}
+                    text_color: "black"
+                    icon_color:"black"
+                    on_release: scr.current = "Add Canteen"
+                
+                MDRectangleFlatIconButton:
+                    icon: "account-edit-outline"
+                    text: "Update Canteen User"
+                    text_size:self.size
+                    halign:'left'
+                    line_color: "white"
+                    size_hint :1, .08
+                    pos_hint: {'center_x': .5, 'center_y': .72}
+                    text_color: "black"
+                    icon_color:"black"
+                    on_release: scr.current = "Update Canteen"
+                
+                MDRectangleFlatIconButton:
+                    icon: "account-remove-outline"
+                    text: "Delete Canteen User"
+                    text_size:self.size
+                    halign:'left'
+                    line_color: "white"
+                    size_hint :1, .08
+                    pos_hint: {'center_x': .5, 'center_y': .64}
+                    text_color: "black"
+                    icon_color:"black"
+                    on_release: scr.current = "Canteen Delete"
+
+            #Report Screen       
+            MDScreen:
+                id:r_screen
+                name:"Home2"   
+                MDTopAppBar:
+                    id:button
+                    title: "Reports"
+                    left_action_items: [["arrow-left", lambda x: app.callback(), "Back To Home Page"]]
+                    right_action_items:[["dots-vertical", lambda x: app.dropdown(x)]]
+                    pos_hint : {"center_y":.95}
+
+                MDRaisedButton:
+                    text: "From Date"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .3, 'center_y': .8}
+                    on_release: app.show_date_picker()
+                    
+                MDRaisedButton:
+                    text: "To Date"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .7, 'center_y': .8}
+                    on_release: app.show_date_picker1()
+
+
+                MDLabel:
+                    id : FD
+                    text:"From Date:"
+                    pos_hint : {'center_x': .6,'center_y':.7}
+    
+                MDLabel:
+                    id : id2
+                    text:"To Date:"
+                    pos_hint : {'center_x': .6,'center_y':.6}
+
+                MDLabel:
+                    text:"Total Amount :"
+                    pos_hint : {'center_x': .6,'center_y':.5}
+
+            #student data add screen
+
+            MDScreen:
+                name:"Add"
+                MDTopAppBar:
+                    title: "Add User"
+                    anchor_title: "left"
+                    md_bg_color:'red'
+                    pos_hint : {"center_y":.95}
+
+                MDLabel:    
+                    text:"Fill Details:"
+                    pos_hint : {"center_y":.8}
+                    halign : "left"
+
+                MDTextField:
+                    id:RollNo
+                    hint_text: "Roll No"
+                    helper_text: "Check the Rollno Twise Before Saving"
+                    pos_hint : {"center_y":.7}
+                    halign : "left"
+
+                MDTextField:
+                    id: StudentName
+                    hint_text: "Student Name"
+                    helper_text: "Full Name"
+                    pos_hint : {"center_y":.58}
+                    halign : "left"
+
+                MDTextField:
+                    id:Department
+                    hint_text: "Department"
+                    helper_text: "Student Dep "
+                    pos_hint : {"center_y":.45}
+                    halign : "left"
+
+                MDRaisedButton:
+                    text: "Ok"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .6, 'center_y': .15}
+                    on_release:app.show_alert_dialog()
+
+                MDRaisedButton:
+                    text: "Cancel"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .85, 'center_y': .15}
+                    on_release:scr.current = "Home"       
+
+
+            #student update screen 
+
+            MDScreen:
+                name:"Update"
+                MDTopAppBar:
+                    id : button1
+                    title: "Update User"
+                    anchor_title: "left"
+                    md_bg_color:'red'
+                    pos_hint : {"center_y":.95}
+                    right_action_items:[["dots-vertical", lambda x: app.dropdown1(x)]]
+                MDLabel:    
+                    text:"Fill Details:"
+                    pos_hint : {"center_y":.8}
+                    halign : "left"
+                MDTextField:
+                    id:RollNo1
+                    hint_text: "Roll No"
+                    helper_text: "Student Roll No"
+                    pos_hint : {"center_y":.7}
+                    halign : "left"
+
+                MDTextField:
+                    id: StudentName1
+                    hint_text: "Student Name"
+                    helper_text: "Full Name"
+                    pos_hint : {"center_y":.58}
+                    halign : "left"
+
+                MDTextField:
+                    id:Department1
+                    hint_text: "Department"
+                    helper_text: "Student Dep "
+                    pos_hint : {"center_y":.45}
+                    halign : "left"
+
+                MDRaisedButton:
+                    text: "Ok"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .6, 'center_y': .15}
+                    on_release:app.show_alert_dialog1()
+
+                MDRaisedButton:
+                    text: "Cancel"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .85, 'center_y': .15}
+                    on_release:scr.current = "Home"           
+
+            #Add canteen data
+            MDScreen:
+                name:"Add Canteen"
+                MDTopAppBar:
+                    title: "Add Canteen User"
+                    anchor_title: "left"
+                    md_bg_color:'red'
+                    pos_hint : {"center_y":.95}
+
+                MDLabel:    
+                    text:"Fill Details:"
+                    pos_hint : {"center_y":.8}
+                    halign : "left"
+
+                MDTextField:
+                    id: CanteentName
+                    hint_text: "Canteen Name"
+                    helper_text: "Full Name"
+                    pos_hint : {"center_y":.7}
+                    halign : "left"
+                
+                MDTextField:
+                    
+                    hint_text: "Phone Number"
+                    helper_text: "Contact Number"
+                    pos_hint : {"center_y":.58}
+                    halign : "left"
+
+                MDTextField:
+                    
+                    hint_text: "Email"
+                    helper_text: "Proper Gmail ID"
+                    pos_hint : {"center_y":.45}
+                    halign : "left"
+
+                MDRaisedButton:
+                    text: "Ok"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .6, 'center_y': .15}
+                    on_release:app.show_alert_dialog()
+
+                MDRaisedButton:
+                    text: "Cancel"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .85, 'center_y': .15}
+                    on_release:scr.current = "Home1"        
+            
+            MDScreen:
+                name:"Update Canteen"
+                MDTopAppBar:
+                    #id : button1
+                    title: "Update Canteen User"
+                    anchor_title: "left"
+                    md_bg_color:'red'
+                    pos_hint : {"center_y":.95}
+                    #right_action_items:[["dots-vertical", lambda x: app.dropdown1(x)]]
+
+                MDLabel:    
+                    text:"Fill Details:"
+                    pos_hint : {"center_y":.8}
+                    halign : "left"
+
+                MDTextField:
+                    id: CanteenName1
+                    hint_text: "Canteen Name"
+                    helper_text: "Full Name"
+                    pos_hint : {"center_y":.7}
+                    halign : "left"
+                
+                MDTextField:
+                    
+                    hint_text: "Phone Number"
+                    helper_text: "Contact Number"
+                    pos_hint : {"center_y":.58}
+                    halign : "left"
+
+                MDTextField:
+                    hint_text: "Email"
+                    helper_text: "Proper Gmail ID"
+                    pos_hint : {"center_y":.45}
+                    halign : "left"
+
+                MDRaisedButton:
+                    text: "Ok"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .6, 'center_y': .15}
+                    on_release:app.show_alert_dialog1()
+
+                MDRaisedButton:
+                    text: "Cancel"
+                    md_bg_color: "red"
+                    pos_hint: {'center_x': .85, 'center_y': .15}
+                    on_release:scr.current = "Home"
+                
+                        
+        NavBar:
+            size_hint: .99, .1
+            pos_hint: {"center_x": .5, "center_y": .040}
+            elevation: 10
+            md_bg_color: 1, 1, 1, 1
+            radius: [16]
+            MDGridLayout:
+                cols: 4
+                size_hint_x: .9
+                spacing: 25
+                pos_hint: {"center_x": .5, "center_y": .5}
+
+                MDIconButton:
+                    id: nav_icon1
+                    icon: "account-cog-outline"
+                    ripple_scale: 0
+                    size_hint:self.size
+                    user_font_size: "30sp"
+                    theme_text_color:"Custom"
+                    text_color: 0, 0, 0, 1
+                    on_release:
+                        scr.current = "Home"
+                        app.change_color(self)       
+                    
+                MDIconButton:
+                    id: nav_icon2
+                    icon: "food"
+                    ripple_scale: 0
+                    size_hint:self.size
+                    user_font_size: "30sp"
+                    theme_text_color:"Custom"
+                    text_color: 0, 0, 0, 1
+                    on_release:
+                        scr.current = "Home1"
+                        app.change_color(self)
+                        
+                MDIconButton:
+                    id: nav_icon3
+                    size_hint:self.size
+                    icon: "file-document-multiple-outline"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color:"Custom"
+                    text_color: 0, 0, 0, 1
+                    on_release:
+                        scr.current = "Home2"
+                        app.change_color(self)
+
+                MDIconButton:
+                    id: nav_icon4
+                    icon: "account"
+                    ripple_scale: 0
+                    size_hint:self.size
+                    user_font_size: "30sp"
+                    theme_text_color:"Custom"
+                    text_color: 0, 0, 0, 1
+                    on_release:
+                        scr.current = "Home3"
+                        app.change_color(self)    
+                
+                        
+                
+            

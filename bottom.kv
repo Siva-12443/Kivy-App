@@ -1,0 +1,264 @@
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+MDScreen: 
+    name: "bottom"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        ScreenManager:
+            id: scr
+            transition: NoTransition()
+            MDScreen:
+                name: "home"
+                MDFloatLayout:
+                    md_bg_color: 1, 1, 1, 1
+                    MDIconButton:
+                        icon: "logout"
+                        pos_hint: {"center_x": .93, "center_y": .95}
+                        user_font_size: "20sp"
+                        theme_text_color: "Custom"
+                        text_color: rgba(34, 34, 34, 255)
+                        on_release: 
+                            root.manager.current = "login"
+                    Image:
+                        source: "assets/logo.png"
+                        size_hint: .8, .8
+                        pos_hint: {"center_x": .5, "center_y": .65}
+                    MDLabel: 
+                        text: "Welcome To "
+                        font_name: "SPoppins"
+                        font_size: "23sp"
+                        pos_hint: {"center_y": .42}
+                        halign: "center"
+                        color: rgba(34, 34, 34, 255)
+                    MDLabel: 
+                        text: "Annapoorna Scheme !!"
+                        font_name: "SPoppins"
+                        font_size: "23sp"
+                        pos_hint: {"center_y": .36}
+                        halign: "center"
+                        color: rgba(34, 34, 34, 255)
+                    MDLabel: 
+                        text: "Food is not Rational. Food is Culture, Habit, Craving and Identity. Good Food is the foundation of genuine happiness."
+                        font_name: "MPoppins"
+                        font_size: "13sp"
+                        size_hint_x: .85
+                        pos_hint: {"center_x": .5, "center_y": .26}
+                        halign: "center"
+                        color: rgba(127, 127, 127, 255)
+
+            MDScreen:
+                name: "search"
+                MDLabel:
+                    text: "Search"
+                    pos_hint: {"center_y": .5}
+                    halign: "center"
+            MDScreen:  
+                name:"Canteen"
+                MDIconButton:
+                    icon: "arrow-left"
+                    pos_hint: {"center_y": .95}
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: rgba(26, 24, 58, 255)
+                    on_release:
+                        scr.current = "home"
+                        app.change_color(self)
+                MDList:
+                    id: datatable
+                    pos_hint:{'center_y':0.9}
+                    size_hint:0.99,0.97
+
+            MDScreen:
+                name: "search1"
+                MDFloatLayout:
+                    md_bg_color: 1, 1, 1, 1
+                    MDIconButton:
+                        icon: "arrow-left"
+                        pos_hint: {"center_y": .95}
+                        user_font_size: "30sp"
+                        theme_text_color: "Custom"
+                        text_color: rgba(26, 24, 58, 255)
+                        on_release:
+                            scr.current = "home"
+                    MDLabel:
+                        text: "User Profile Details !"
+                        font_name: "SPoppins"
+                        font_size: "26sp"
+                        pos_hint: {"center_x": .6, "center_y": .88}
+                        color: rgba(34, 34, 34, 255)
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .77}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: username
+                            hint_text: "User Name"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp" 
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .66}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: Canteen_Name
+                            hint_text: "Canteen Name"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp"
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .55}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: email
+                            hint_text: "Email"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp"
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .44}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: password
+                            hint_text: "Password"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            password: True
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp"
+                    MDFloatLayout:
+                        size_hint: .8, .09
+                        pos_hint: {"center_x": .5, "center_y": .33}
+                        canvas:
+                            Color: 
+                                rgb: rgba(245, 245, 245, 255)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+                        TextInput:
+                            id: confirmpassword
+                            hint_text: "Change Password"
+                            size_hint: 1, None
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            height: self.minimum_height
+                            multiline: False
+                            password: True
+                            hint_text_color: rgba(168, 168, 168, 255)
+                            background_color: 0, 0, 0, 0
+                            padding: 18
+                            font_name: "BPoppins"
+                            font_size: "16sp"
+                    Button: 
+                        text: "Update"
+                        font_name: "Poppins"
+                        size_hint: .66, .065
+                        font_size: "18sp"
+                        pos_hint: {"center_x": .5, "center_y": .21}
+                        background_color: 0, 0, 0, 0
+                        on_release: app.send_data(username, rollno, email, password)
+                        canvas.before: 
+                            Color:
+                                rgb: app.btn_color
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [8]
+        NavBar:
+            size_hint: .99, .1
+            pos_hint: {"center_x": .5, "center_y": .040}
+            elevation: 10
+            md_bg_color: 1, 1, 1, 1
+            radius: [16]
+            MDGridLayout:
+                cols: 4
+                size_hint_x: .9
+                spacing: 25
+                pos_hint: {"center_x": .5, "center_y": .5}
+                MDIconButton: 
+                    id: nav_icon1
+                    icon: "home"
+                    ripple_scale: 0
+                    user_font_size: "40sp"
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 0, 1
+                    on_release:
+                        scr.current = "home"
+                        app.change_color(self)
+                MDIconButton: 
+                    id: nav_icon2
+                    icon: "qrcode"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: 0, 0, 0, 1
+                    on_release:
+                        app.root.current = "QrScanner"
+                        app.change_color(self) 
+                MDIconButton: 
+                    id: nav_icon3
+                    icon: "file-document-multiple-outline"
+                    ripple_scale: 0
+                    user_font_size: "10sp"
+                    theme_text_color: "Custom"
+                    text_color: (0,0,0,1) if self.state == 'normal' else (1,0,0,1)
+                    on_release:
+                        app.root.current = "Example"
+                MDIconButton: 
+                    id: nav_icon4
+                    icon: "account"
+                    ripple_scale: 0
+                    user_font_size: "30sp"
+                    theme_text_color: "Custom"
+                    text_color: (0,0,0,1) if self.state == 'normal' else (1,0,0,1)
+                    on_release:
+                        scr.current = "search1"
+                        nav_icon4.text_color: (1,0,0,1)

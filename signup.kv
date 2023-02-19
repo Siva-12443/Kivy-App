@@ -1,0 +1,167 @@
+MDScreen: 
+    name: "signup"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDIconButton:
+            icon: "arrow-left"
+            pos_hint: {"center_y": .95}
+            user_font_size: "30sp"
+            theme_text_color: "Custom"
+            text_color: rgba(26, 24, 58, 255)
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "main"
+        MDLabel:
+            text: "H i !"
+            font_name: "SPoppins"
+            font_size: "26sp"
+            pos_hint: {"center_x": .6, "center_y": .88}
+            color: rgba(34, 34, 34, 255)
+        MDLabel: 
+            text: "Create a new account"
+            font_name: "MPoppins"
+            font_size: "15sp"
+            pos_hint: {"center_x": .6, "center_y": .82}
+            color: rgba(127, 127, 127, 255)
+        MDFloatLayout:
+            size_hint: .8, .09
+            pos_hint: {"center_x": .5, "center_y": .72}
+            canvas:
+                Color: 
+                    rgb: rgba(245, 245, 245, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            TextInput:
+                id: fullname
+                hint_text: "Full Name"
+                size_hint: 1, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                height: self.minimum_height
+                multiline: False
+                hint_text_color: rgba(168, 168, 168, 255)
+                background_color: 0, 0, 0, 0
+                padding: 18
+                font_name: "BPoppins"
+                font_size: "16sp"
+        MDFloatLayout:
+            size_hint: .8, .09
+            pos_hint: {"center_x": .5, "center_y": .62}
+            canvas:
+                Color: 
+                    rgb: rgba(245, 245, 245, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            TextInput:
+                id: Canteen_Name
+                hint_text: "Canteen Name"
+                size_hint: 1, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                height: self.minimum_height
+                multiline: False
+                hint_text_color: rgba(168, 168, 168, 255)
+                background_color: 0, 0, 0, 0
+                padding: 18
+                font_name: "BPoppins"
+                font_size: "16sp"
+        MDFloatLayout:
+            size_hint: .8, .09
+            pos_hint: {"center_x": .5, "center_y": .52}
+            canvas:
+                Color: 
+                    rgb: rgba(245, 245, 245, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            TextInput:
+                id: user_name
+                hint_text: "User Name"
+                size_hint: 1, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                height: self.minimum_height
+                multiline: False
+                hint_text_color: rgba(168, 168, 168, 255)
+                background_color: 0, 0, 0, 0
+                padding: 18
+                font_name: "BPoppins"
+                font_size: "16sp"
+        MDFloatLayout:
+            size_hint: .8, .09
+            pos_hint: {"center_x": .5, "center_y": .42}
+            canvas:
+                Color: 
+                    rgb: rgba(245, 245, 245, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            TextInput:
+                id: password
+                hint_text: "Password"
+                size_hint: 1, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                height: self.minimum_height
+                multiline: False
+                password: True
+                hint_text_color: rgba(168, 168, 168, 255)
+                background_color: 0, 0, 0, 0
+                padding: 18
+                font_name: "BPoppins"
+                font_size: "16sp"
+        MDFloatLayout:
+            size_hint: .8, .09
+            pos_hint: {"center_x": .5, "center_y": .32}
+            canvas:
+                Color: 
+                    rgb: rgba(245, 245, 245, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            TextInput:
+                id: apprights
+                hint_text: "App Rights"
+                size_hint: 1, None
+                pos_hint: {"center_x": .5, "center_y": .5}
+                height: self.minimum_height
+                multiline: False
+                password: True
+                hint_text_color: rgba(168, 168, 168, 255)
+                background_color: 0, 0, 0, 0
+                padding: 18
+                font_name: "BPoppins"
+                font_size: "16sp"
+        Button: 
+            text: "Sign up"
+            font_name: "Poppins"
+            size_hint: .66, .065
+            font_size: "18sp"
+            pos_hint: {"center_x": .5, "center_y": .21}
+            background_color: 0, 0, 0, 0
+            on_release: app.send_data(fullname, Canteen_Name, user_name, password, apprights)
+            canvas.before: 
+                Color:
+                    rgb: app.btn_color
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+        MDLabel:
+            text: "Already have an account?"
+            font_name: "BPoppins"
+            font_size: "14sp"
+            pos_hint: {"center_x": .6, "center_y": .11}
+            color: rgba(34, 34, 34, 255)
+        MDTextButton:
+            text: "Sign in"
+            font_name: "BPoppins"
+            font_size: "15sp"
+            pos_hint: {"center_x": .79, "center_y": .11}
+            color: rgba(52, 0, 231, 255)
+            on_release: 
+                root.manager.transition.direction = "left"
+                root.manager.current = "login"

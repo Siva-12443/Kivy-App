@@ -1,0 +1,109 @@
+MDScreen:
+    name: "details"
+    MDFloatLayout:
+        md_bg_color: 238/255, 238/255, 1, 1
+        MDIconButton:
+            icon: "arrow-left"
+            pos_hint: {"center_y": .95}
+            user_font_size: "30sp"
+            theme_text_color: "Custom"
+            text_color: rgba(26, 24, 58, 255)
+            on_release:
+                
+        Image:
+            source: "assets/logo.png"
+            size_hint: .6, .6
+            pos_hint: {"center_x": .5, "center_y": .78}
+        MDLabel:
+            text: "Select Which Food Do You Want ?"
+            font_name: "SPoppins"
+            font_size: "16sp"
+            pos_hint: {"center_x": .56, "center_y": .35}
+            color: rgba(34, 34, 34, 255)
+        MDFloatLayout:
+            size_hint: .6, .10
+            pos_hint: {"center_x": .63, "center_y": .58}
+            canvas:
+                Color: 
+                    rgb: 238/255, 238/255, 1, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            TextInput:
+                id: student_name
+                hint_text: "Student Name"
+                size_hint: 1, None
+                pos_hint: {"center_x": .7, "center_y": .4}
+                height: self.minimum_height
+                multiline: False
+                hint_text_color: rgba(168, 168, 168, 255)
+                background_color: 0, 0, 0, 0
+                padding: 18
+                font_name: "BPoppins"
+                font_size: "16sp"
+        MDFloatLayout:
+            size_hint: .45, .10
+            pos_hint: {"center_x": .705, "center_y": .48}
+            canvas:
+                Color: 
+                    rgb: 238/255, 238/255, 1, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            TextInput:
+                id: roll_number
+                hint_text: "Roll Number"
+                size_hint: 1, None
+                pos_hint: {"center_x": .43, "center_y": .38}
+                height: self.minimum_height
+                multiline: False
+                hint_text_color: rgba(168, 168, 168, 255)
+                background_color: 0, 0, 0, 0
+                padding: 18
+                font_name: "BPoppins"
+                font_size: "16sp"
+        MDLabel:
+            text: "Name"
+            font_name: "SPoppins"
+            font_size: "18sp"
+            pos_hint: {"center_x": .6, "center_y": .57}
+            color: rgba(34, 34, 34, 255)
+        MDLabel:
+            text: "Roll Number"
+            font_name: "SPoppins"
+            font_size: "18sp"
+            pos_hint: {"center_x": .6, "center_y": .47}
+            color: rgba(34, 34, 34, 255)
+        Button: 
+            text: "Lunch"
+            font_name: "Poppins"
+            size_hint: .4, .08
+            font_size: "18sp"
+            pos_hint: {"center_x": .25, "center_y": .25}
+            background_color: 0, 0, 0, 0
+            on_release: app.set_snackLunch(" Lunch", roll_number.text, student_name.text)
+            canvas.before: 
+                Color:
+                    rgb: app.btn_color
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [22]
+        Button: 
+            text: "Snack"
+            font_name: "Poppins"
+            font_size: "18sp"
+            size_hint: .4, .08
+            pos_hint: {"center_x": .75, "center_y": .25}
+            background_color: 0, 0, 0, 0
+            color: 1, 1, 1, 1
+            on_release: app.set_snackLunch(" Snack", roll_number.text, student_name.text)
+            canvas.before: 
+                Color:
+                    rgb: 0, 0, 100
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [22]
